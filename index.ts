@@ -1,12 +1,14 @@
 import express from "express"
 import dotenv from "dotenv"
 import stringRoute from "./routes/stringRoutes"
+import { initializeDatabase } from "./config/initDB"
 
 dotenv.config()
 
 
 const app = express()
 
+initializeDatabase()
 
 
 // Middleware

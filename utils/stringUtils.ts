@@ -13,10 +13,9 @@ export function isPalindrome(str: string) {
   return false;
 }
 
-export function uniqueCharaterCount(str: any) {
-  const strArray = str.split("");
-  const unique = new Set(strArray);
-
+export function uniqueCharacterCount(str: string): number {
+  const cleaned = str.replace(/\s+/g, ""); // remove all whitespace
+  const unique = new Set(cleaned);
   return unique.size;
 }
 
@@ -46,7 +45,7 @@ export function computeStringProperties(value: string) {
   return {
     length: value.length,
     is_palindrome: isPalindrome(value),
-    unique_characters: uniqueCharaterCount(value),
+    unique_characters: uniqueCharacterCount(value),
     word_count: wordCount(value),
     sha256_hash: hashString(value),
     character_frequency_map: frequencyCharacterMap(value)

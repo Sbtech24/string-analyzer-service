@@ -1,11 +1,17 @@
 import express from "express"
-import { createString } from "../controllers/stringController"
+import { createString, getString, getAllStrings, deleteString,filterByNaturalLanguage} from "../controllers/stringController"
 
 
 const router = express.Router()
 
-router.route("/").post(createString)
-// router.route("/:stringValue").get().delete()
+router.post("/", createString);
+router.get("/filter-by-natural-language", filterByNaturalLanguage);
+
+router.get("/:value", getString);
+router.get("/", getAllStrings);
+router.delete("/:value", deleteString);
+
+
 
 
 export default router
