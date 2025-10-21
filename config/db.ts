@@ -12,5 +12,9 @@ const conn = new Pool({
 
 
 })
+conn.connect()
+  .then(() => console.log(" Database connected successfully"))
+  .catch((err) => console.error(" Database connection error:", err));
+
 
 export default conn
