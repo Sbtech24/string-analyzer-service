@@ -8,7 +8,7 @@ const conn = new Pool({
     connectionString:process.env.POSTGRES_URI,
     ssl:{
         rejectUnauthorized:false
-    }
+    },
 
 
 })

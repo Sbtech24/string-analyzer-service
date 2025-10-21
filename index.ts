@@ -8,7 +8,7 @@ dotenv.config()
 
 const app = express()
 
-initializeDatabase()
+await initializeDatabase()
 
 
 // Middleware
